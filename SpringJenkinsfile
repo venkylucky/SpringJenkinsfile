@@ -24,7 +24,7 @@ pipeline {
               
                    sh '''#!/bin/bash -l
 
-                    mvn clean test -f pom.xml
+                    mvn clean install -f pom.xml
 
                  '''
                  
