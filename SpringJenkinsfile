@@ -12,11 +12,11 @@ pipeline {
         stage('Setup') {
             steps {
               
-                sh '''#!/bin/bash -l
+                
 
                  git credentialsId: 'githubid', url: 'https://github.com/venkylucky/spring-petclinic.git'
                 
-                '''
+               
                   }
          
                        }
