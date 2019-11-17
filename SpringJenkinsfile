@@ -12,11 +12,11 @@ pipeline {
         stage('Setup') {
             steps {
               
-                
+                sh '''#!/bin/bash -l
 
-                 git credentialsId: 'githubid', url: 'https://github.com/venkylucky/spring-petclinic.git'
+                 git credentialsId: 'github', url: 'https://github.com/venkylucky/spring-petclinic.git'
                 
-               
+                   '''
                   }
          
                        }
@@ -24,8 +24,11 @@ pipeline {
             
             steps {
               
-                bat 'mvn clean test -f pom.xml'
-                bat  'dir'
+                   sh '''#!/bin/bash -l
+
+                    mvn clean test -f pom.xml
+
+                 '''
                  
             }
           }
