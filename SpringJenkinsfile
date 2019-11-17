@@ -1,0 +1,34 @@
+pipeline {
+
+    agent any
+    
+    environment {
+      
+      root_dir = sh(script: 'pwd', , returnStdout: true).trim()
+      
+    }
+
+    stages {
+        stage('Setup') {
+            steps {
+              
+                sh '''#!/bin/bash -l
+
+                 git credentialsId: 'githubid', url: 'https://github.com/venkylucky/spring-petclinic.git'
+                
+                '''
+                  }
+         
+                       }
+        stage('Selenium Test Suite') {
+            
+            steps {
+              
+                bat label: '', script: '''
+                  dir
+                  mvn clean test -f pom.xml
+
+                 '''
+            }
+          }
+        }
