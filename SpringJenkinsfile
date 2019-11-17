@@ -25,7 +25,6 @@ pipeline {
             steps {
               
                 bat label: '', script: '''
-                  dir
                   mvn clean test -f pom.xml
 
                  '''
