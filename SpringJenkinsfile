@@ -21,9 +21,10 @@ pipeline {
         stage('Selenium Test Suite') {
             
             steps {
-              
+                  sh '''#!/bin/bash -l
+		  pwd
                   mvn clean install -f pom.xml
-                        
+                   '''      
             }
           }
   }
