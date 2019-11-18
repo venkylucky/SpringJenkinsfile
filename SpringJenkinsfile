@@ -39,11 +39,11 @@ pipeline {
   }
             post {
 	             always{ 
-               sh  ''' 
+               
                 ls -ltr
-                  
-             # junit '**/	target/surefire-reports/testng-results.xml'
-	          '''
+                pwd  
+              junit '**/target/surefire-reports/testng-results.xml'
+	       
               junit  '/var/lib/jenkins/workspace/Test/target/surefire-reports/*.xml'
                 
                        }
