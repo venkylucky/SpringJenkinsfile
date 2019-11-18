@@ -24,8 +24,8 @@ pipeline {
                   sh '''#!/bin/bash -l
 		  
 		  pwd
-		  sudo mvn --version
-                  sudo mvn clean install -f pom.xml
+		   mvn --version
+                   mvn clean install -f pom.xml
                    '''      
             }
           }
