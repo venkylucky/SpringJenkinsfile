@@ -35,8 +35,9 @@ pipeline {
 	             always{ 
                sh  ''' 
                 ls -ltr
-                  ''' 
+                  
              # junit '**/	target/surefire-reports/testng-results.xml'
+	          '''
               junit  '/var/lib/jenkins/workspace/free/target/surefire-reports/*.xml'
                 
                        }
