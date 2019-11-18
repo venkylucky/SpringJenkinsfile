@@ -22,7 +22,10 @@ pipeline {
             
             steps {
                   sh '''#!/bin/bash -l
-		  
+		  jdk = tool name: 'JAVA_HOME'
+                 env.JAVA_HOME = "${jdk}"
+
+                  echo "jdk installation path is: ${jdk}"
 		  pwd
 		   mvn --version
                    mvn clean install -f pom.xml
