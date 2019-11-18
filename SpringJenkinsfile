@@ -39,13 +39,12 @@ pipeline {
   }
             post {
 	             always{ 
-               
-                ls -ltr
-                pwd  
-              junit '**/target/surefire-reports/testng-results.xml'
-	       
-              junit  '/var/lib/jenkins/workspace/Test/target/surefire-reports/*.xml'
-                
+                             junit '**/target/surefire-reports/testng-results.xml'
+	                     junit  '/var/lib/jenkins/workspace/Test/target/surefire-reports/*.xml'
+                 sh '''#!/bin/bash -l
+		       ls -ltr
+                       pwd 
+		     '''
                        }
         failure {
             echo "Error occurred. --> ${currentBuild.fullDisplayName} --> ${env.BUILD_URL}"
