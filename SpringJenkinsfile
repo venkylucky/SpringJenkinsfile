@@ -39,8 +39,13 @@ pipeline {
   }
             post {
 	             always{ 
-                             junit '**/target/surefire-reports/testng-results.xml'
-	                     junit  '/var/lib/jenkins/workspace/Test/target/surefire-reports/*.xml'
+		     sh '''#!/bin/bash -l
+		       ls -ltr
+                       pwd 
+		     '''
+                            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+			    junit '**/target/surefire-reports/testng-results.xml'
+	                    
                  sh '''#!/bin/bash -l
 		       ls -ltr
                        pwd 
