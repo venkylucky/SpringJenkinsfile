@@ -22,12 +22,8 @@ pipeline {
             
             steps {
               
-                   sh '''#!/bin/bash -l
-
-                    mvn clean install -f pom.xml
-
-                 '''
-                 
+                  mvn clean install -f pom.xml
+                        
             }
           }
   }
