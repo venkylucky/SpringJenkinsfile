@@ -22,9 +22,10 @@ pipeline {
             
             steps {
                   sh '''#!/bin/bash -l
+		  
 		  pwd
-		  mvn --version
-                  mvn clean install -f pom.xml
+		  sudo mvn --version
+                  sudo mvn clean install -f pom.xml
                    '''      
             }
           }
