@@ -30,5 +30,18 @@ pipeline {
                  
             }
           }
+            post {
+	             always{ 
+               sh  ''' 
+                ls -ltr
+                   
+             # junit '**/	target/surefire-reports/testng-results.xml'
+              junit  '/var/lib/jenkins/workspace/free/target/surefire-reports/*.xml'
+                '''
+                       }
+        failure {
+            echo "Error occurred. --> ${currentBuild.fullDisplayName} --> ${env.BUILD_URL}"
+                }
+                 }
         }
 }
