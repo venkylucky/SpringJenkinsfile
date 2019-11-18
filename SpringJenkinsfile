@@ -44,7 +44,7 @@ pipeline {
                   
              # junit '**/	target/surefire-reports/testng-results.xml'
 	          '''
-              junit  '/var/lib/jenkins/workspace/free/target/surefire-reports/*.xml'
+              junit  '/var/lib/jenkins/workspace/Test/target/surefire-reports/*.xml'
                 
                        }
         failure {
